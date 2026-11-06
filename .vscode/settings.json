@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.oparia": "oparia",
+    "*.opa": "oparia"
+  },
+  "editor.tabSize": 4
+}

@@ -1,0 +1,17 @@
+say "Welcome to OpariaLang!"
+
+system("echo Shell execution works")
+
+extern "Python" {
+print("Hello from Python")
+}
+
+extern "C" {
+printf("Hello from C!\n");
+}
+
+extern "C++" {
+cout << "Hello from C++!" << endl;
+}
+
+say "Finished!"

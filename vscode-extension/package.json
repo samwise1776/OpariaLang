@@ -1,0 +1,89 @@
+{
+  "name": "oparialang",
+  "displayName": "OpariaLang",
+  "description": "Language support, snippets, completions, diagnostics and execution for OpariaLang.",
+  "version": "0.1.0",
+  "publisher": "samwise1776",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:oparia",
+    "onCommand:oparia.runFile"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "oparia",
+        "aliases": [
+          "OpariaLang",
+          "Oparia"
+        ],
+        "extensions": [
+          ".oparia",
+          ".opa"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "oparia",
+        "scopeName": "source.oparia",
+        "path": "./syntaxes/oparia.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "oparia",
+        "path": "./snippets/oparia.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "oparia.runFile",
+        "title": "OpariaLang: Run File"
+      },
+      {
+        "command": "oparia.newFile",
+        "title": "OpariaLang: New File"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "oparia.runFile",
+          "when": "resourceLangId == oparia",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "OpariaLang",
+      "properties": {
+        "oparia.pythonPath": {
+          "type": "string",
+          "default": "",
+          "description": "Python executable. Empty uses the project's .venv when available."
+        },
+        "oparia.interpreterPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to main.py. Empty searches the workspace and nearby directories."
+        },
+        "oparia.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable basic OpariaLang syntax diagnostics."
+        }
+      }
+    }
+  }
+}

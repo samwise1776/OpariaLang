@@ -1,0 +1,1495 @@
+{
+  "OpariaLang if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang if template"
+  },
+  "OpariaLang ifelse": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} {",
+      "\t${2:statement}",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang ifelse template"
+  },
+  "OpariaLang elsif": {
+    "prefix": "elsif",
+    "body": [
+      "} elsif ${1:condition} {",
+      "\t$0"
+    ],
+    "description": "OpariaLang elsif template"
+  },
+  "OpariaLang while": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang while template"
+  },
+  "OpariaLang repeat": {
+    "prefix": "repeat",
+    "body": [
+      "repeat ${1:10} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang repeat template"
+  },
+  "OpariaLang for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:item} in ${2:items} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang for template"
+  },
+  "OpariaLang func": {
+    "prefix": "func",
+    "body": [
+      "func ${1:name}(${2:args}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "OpariaLang func template"
+  },
+  "OpariaLang return": {
+    "prefix": "return",
+    "body": [
+      "return ${1:value}"
+    ],
+    "description": "OpariaLang return template"
+  },
+  "OpariaLang break": {
+    "prefix": "break",
+    "body": [
+      "break"
+    ],
+    "description": "OpariaLang break template"
+  },
+  "OpariaLang continue": {
+    "prefix": "continue",
+    "body": [
+      "continue"
+    ],
+    "description": "OpariaLang continue template"
+  },
+  "OpariaLang print": {
+    "prefix": "print",
+    "body": [
+      "print \"${1:Hello World}\""
+    ],
+    "description": "OpariaLang print template"
+  },
+  "OpariaLang say": {
+    "prefix": "say",
+    "body": [
+      "say \"${1:Hello World}\""
+    ],
+    "description": "OpariaLang say template"
+  },
+  "OpariaLang input": {
+    "prefix": "input",
+    "body": [
+      "input(\"${1:Prompt: }\")"
+    ],
+    "description": "OpariaLang input template"
+  },
+  "OpariaLang int": {
+    "prefix": "int",
+    "body": [
+      "int ${1:name} = ${2:0}"
+    ],
+    "description": "OpariaLang int template"
+  },
+  "OpariaLang float": {
+    "prefix": "float",
+    "body": [
+      "float ${1:name} = ${2:0.0}"
+    ],
+    "description": "OpariaLang float template"
+  },
+  "OpariaLang string": {
+    "prefix": "string",
+    "body": [
+      "string ${1:name} = \"${2:text}\""
+    ],
+    "description": "OpariaLang string template"
+  },
+  "OpariaLang text": {
+    "prefix": "text",
+    "body": [
+      "text ${1:name} = \"${2:text}\""
+    ],
+    "description": "OpariaLang text template"
+  },
+  "OpariaLang bool": {
+    "prefix": "bool",
+    "body": [
+      "bool ${1:name} = ${2:true}"
+    ],
+    "description": "OpariaLang bool template"
+  },
+  "OpariaLang any": {
+    "prefix": "any",
+    "body": [
+      "any ${1:name} = ${2:null}"
+    ],
+    "description": "OpariaLang any template"
+  },
+  "OpariaLang list": {
+    "prefix": "list",
+    "body": [
+      "list<${1:int}> ${2:items} = {$0}"
+    ],
+    "description": "OpariaLang list template"
+  },
+  "OpariaLang dict": {
+    "prefix": "dict",
+    "body": [
+      "list<${1:string},${2:int}> ${3:data} = {",
+      "\t\"${4:key}\": ${5:0}",
+      "}"
+    ],
+    "description": "OpariaLang dict template"
+  },
+  "OpariaLang fstring": {
+    "prefix": "fstring",
+    "body": [
+      "print f\"${1:Value}: {${2:variable}}\""
+    ],
+    "description": "OpariaLang fstring template"
+  },
+  "OpariaLang wait": {
+    "prefix": "wait",
+    "body": [
+      "wait ${1:1}"
+    ],
+    "description": "OpariaLang wait template"
+  },
+  "OpariaLang debug": {
+    "prefix": "debug",
+    "body": [
+      "debug"
+    ],
+    "description": "OpariaLang debug template"
+  },
+  "OpariaLang system": {
+    "prefix": "system",
+    "body": [
+      "system(\"${1:echo Hello}\")"
+    ],
+    "description": "OpariaLang system template"
+  },
+  "OpariaLang capture": {
+    "prefix": "capture",
+    "body": [
+      "string ${1:output} = system(\"${2:pwd}\", true)"
+    ],
+    "description": "OpariaLang capture template"
+  },
+  "OpariaLang filewrite": {
+    "prefix": "filewrite",
+    "body": [
+      "File.write(\"${1:file.txt}\", \"${2:Hello}\")"
+    ],
+    "description": "OpariaLang filewrite template"
+  },
+  "OpariaLang fileread": {
+    "prefix": "fileread",
+    "body": [
+      "string ${1:content} = File.read(\"${2:file.txt}\")"
+    ],
+    "description": "OpariaLang fileread template"
+  },
+  "OpariaLang fileappend": {
+    "prefix": "fileappend",
+    "body": [
+      "File.append(\"${1:file.txt}\", \"${2:text}\")"
+    ],
+    "description": "OpariaLang fileappend template"
+  },
+  "OpariaLang externpy": {
+    "prefix": "externpy",
+    "body": [
+      "extern \"Python\" {",
+      "\t${1:print(\"Hello from Python\")}",
+      "}"
+    ],
+    "description": "OpariaLang externpy template"
+  },
+  "OpariaLang externc": {
+    "prefix": "externc",
+    "body": [
+      "extern \"C\" {",
+      "\t${1:printf(\"Hello from C!\\\\n\");}",
+      "}"
+    ],
+    "description": "OpariaLang externc template"
+  },
+  "OpariaLang externcpp": {
+    "prefix": "externcpp",
+    "body": [
+      "extern \"C++\" {",
+      "\t${1:cout << \"Hello from C++!\" << endl;}",
+      "}"
+    ],
+    "description": "OpariaLang externcpp template"
+  },
+  "Builtin print": {
+    "prefix": "print(",
+    "body": [
+      "print(${1:value})"
+    ],
+    "description": "Call builtin print"
+  },
+  "Builtin say": {
+    "prefix": "say(",
+    "body": [
+      "say(${1:value})"
+    ],
+    "description": "Call builtin say"
+  },
+  "Builtin input": {
+    "prefix": "input(",
+    "body": [
+      "input(${1:value})"
+    ],
+    "description": "Call builtin input"
+  },
+  "Builtin len": {
+    "prefix": "len(",
+    "body": [
+      "len(${1:value})"
+    ],
+    "description": "Call builtin len"
+  },
+  "Builtin str": {
+    "prefix": "str(",
+    "body": [
+      "str(${1:value})"
+    ],
+    "description": "Call builtin str"
+  },
+  "Builtin int": {
+    "prefix": "int(",
+    "body": [
+      "int(${1:value})"
+    ],
+    "description": "Call builtin int"
+  },
+  "Builtin float": {
+    "prefix": "float(",
+    "body": [
+      "float(${1:value})"
+    ],
+    "description": "Call builtin float"
+  },
+  "Builtin bool": {
+    "prefix": "bool(",
+    "body": [
+      "bool(${1:value})"
+    ],
+    "description": "Call builtin bool"
+  },
+  "Builtin range": {
+    "prefix": "range(",
+    "body": [
+      "range(${1:value})"
+    ],
+    "description": "Call builtin range"
+  },
+  "Builtin abs": {
+    "prefix": "abs(",
+    "body": [
+      "abs(${1:value})"
+    ],
+    "description": "Call builtin abs"
+  },
+  "Builtin min": {
+    "prefix": "min(",
+    "body": [
+      "min(${1:value})"
+    ],
+    "description": "Call builtin min"
+  },
+  "Builtin max": {
+    "prefix": "max(",
+    "body": [
+      "max(${1:value})"
+    ],
+    "description": "Call builtin max"
+  },
+  "Builtin sum": {
+    "prefix": "sum(",
+    "body": [
+      "sum(${1:value})"
+    ],
+    "description": "Call builtin sum"
+  },
+  "Builtin round": {
+    "prefix": "round(",
+    "body": [
+      "round(${1:value})"
+    ],
+    "description": "Call builtin round"
+  },
+  "Builtin upper": {
+    "prefix": "upper(",
+    "body": [
+      "upper(${1:value})"
+    ],
+    "description": "Call builtin upper"
+  },
+  "Builtin lower": {
+    "prefix": "lower(",
+    "body": [
+      "lower(${1:value})"
+    ],
+    "description": "Call builtin lower"
+  },
+  "Builtin strip": {
+    "prefix": "strip(",
+    "body": [
+      "strip(${1:value})"
+    ],
+    "description": "Call builtin strip"
+  },
+  "Builtin replace": {
+    "prefix": "replace(",
+    "body": [
+      "replace(${1:value})"
+    ],
+    "description": "Call builtin replace"
+  },
+  "Builtin split": {
+    "prefix": "split(",
+    "body": [
+      "split(${1:value})"
+    ],
+    "description": "Call builtin split"
+  },
+  "Builtin join": {
+    "prefix": "join(",
+    "body": [
+      "join(${1:value})"
+    ],
+    "description": "Call builtin join"
+  },
+  "Builtin contains": {
+    "prefix": "contains(",
+    "body": [
+      "contains(${1:value})"
+    ],
+    "description": "Call builtin contains"
+  },
+  "Builtin keys": {
+    "prefix": "keys(",
+    "body": [
+      "keys(${1:value})"
+    ],
+    "description": "Call builtin keys"
+  },
+  "Builtin values": {
+    "prefix": "values(",
+    "body": [
+      "values(${1:value})"
+    ],
+    "description": "Call builtin values"
+  },
+  "Builtin items": {
+    "prefix": "items(",
+    "body": [
+      "items(${1:value})"
+    ],
+    "description": "Call builtin items"
+  },
+  "Builtin dict": {
+    "prefix": "dict(",
+    "body": [
+      "dict(${1:value})"
+    ],
+    "description": "Call builtin dict"
+  },
+  "Builtin list": {
+    "prefix": "list(",
+    "body": [
+      "list(${1:value})"
+    ],
+    "description": "Call builtin list"
+  },
+  "Builtin wait": {
+    "prefix": "wait(",
+    "body": [
+      "wait(${1:value})"
+    ],
+    "description": "Call builtin wait"
+  },
+  "Builtin sleep": {
+    "prefix": "sleep(",
+    "body": [
+      "sleep(${1:value})"
+    ],
+    "description": "Call builtin sleep"
+  },
+  "Builtin system": {
+    "prefix": "system(",
+    "body": [
+      "system(${1:value})"
+    ],
+    "description": "Call builtin system"
+  },
+  "Builtin debug": {
+    "prefix": "debug(",
+    "body": [
+      "debug(${1:value})"
+    ],
+    "description": "Call builtin debug"
+  },
+  "File.write": {
+    "prefix": "File.write",
+    "body": [
+      "File.write(${1:argument})"
+    ],
+    "description": "File method: write"
+  },
+  "File.append": {
+    "prefix": "File.append",
+    "body": [
+      "File.append(${1:argument})"
+    ],
+    "description": "File method: append"
+  },
+  "File.read": {
+    "prefix": "File.read",
+    "body": [
+      "File.read(${1:argument})"
+    ],
+    "description": "File method: read"
+  },
+  "File.exists": {
+    "prefix": "File.exists",
+    "body": [
+      "File.exists(${1:argument})"
+    ],
+    "description": "File method: exists"
+  },
+  "File.delete": {
+    "prefix": "File.delete",
+    "body": [
+      "File.delete(${1:argument})"
+    ],
+    "description": "File method: delete"
+  },
+  "File.mkdir": {
+    "prefix": "File.mkdir",
+    "body": [
+      "File.mkdir(${1:argument})"
+    ],
+    "description": "File method: mkdir"
+  },
+  "File.size": {
+    "prefix": "File.size",
+    "body": [
+      "File.size(${1:argument})"
+    ],
+    "description": "File method: size"
+  },
+  "GUI title": {
+    "prefix": "gui.title",
+    "body": [
+      "gui.title(${1:arguments})"
+    ],
+    "description": "GUI API candidate: title"
+  },
+  "GUI label": {
+    "prefix": "gui.label",
+    "body": [
+      "gui.label(${1:arguments})"
+    ],
+    "description": "GUI API candidate: label"
+  },
+  "GUI button": {
+    "prefix": "gui.button",
+    "body": [
+      "gui.button(${1:arguments})"
+    ],
+    "description": "GUI API candidate: button"
+  },
+  "GUI window": {
+    "prefix": "gui.window",
+    "body": [
+      "gui.window(${1:arguments})"
+    ],
+    "description": "GUI API candidate: window"
+  },
+  "GUI run": {
+    "prefix": "gui.run",
+    "body": [
+      "gui.run(${1:arguments})"
+    ],
+    "description": "GUI API candidate: run"
+  },
+  "GUI show": {
+    "prefix": "gui.show",
+    "body": [
+      "gui.show(${1:arguments})"
+    ],
+    "description": "GUI API candidate: show"
+  },
+  "GUI hide": {
+    "prefix": "gui.hide",
+    "body": [
+      "gui.hide(${1:arguments})"
+    ],
+    "description": "GUI API candidate: hide"
+  },
+  "GUI close": {
+    "prefix": "gui.close",
+    "body": [
+      "gui.close(${1:arguments})"
+    ],
+    "description": "GUI API candidate: close"
+  },
+  "GUI size": {
+    "prefix": "gui.size",
+    "body": [
+      "gui.size(${1:arguments})"
+    ],
+    "description": "GUI API candidate: size"
+  },
+  "GUI resize": {
+    "prefix": "gui.resize",
+    "body": [
+      "gui.resize(${1:arguments})"
+    ],
+    "description": "GUI API candidate: resize"
+  },
+  "GUI width": {
+    "prefix": "gui.width",
+    "body": [
+      "gui.width(${1:arguments})"
+    ],
+    "description": "GUI API candidate: width"
+  },
+  "GUI height": {
+    "prefix": "gui.height",
+    "body": [
+      "gui.height(${1:arguments})"
+    ],
+    "description": "GUI API candidate: height"
+  },
+  "GUI position": {
+    "prefix": "gui.position",
+    "body": [
+      "gui.position(${1:arguments})"
+    ],
+    "description": "GUI API candidate: position"
+  },
+  "GUI move": {
+    "prefix": "gui.move",
+    "body": [
+      "gui.move(${1:arguments})"
+    ],
+    "description": "GUI API candidate: move"
+  },
+  "GUI center": {
+    "prefix": "gui.center",
+    "body": [
+      "gui.center(${1:arguments})"
+    ],
+    "description": "GUI API candidate: center"
+  },
+  "GUI fullscreen": {
+    "prefix": "gui.fullscreen",
+    "body": [
+      "gui.fullscreen(${1:arguments})"
+    ],
+    "description": "GUI API candidate: fullscreen"
+  },
+  "GUI maximize": {
+    "prefix": "gui.maximize",
+    "body": [
+      "gui.maximize(${1:arguments})"
+    ],
+    "description": "GUI API candidate: maximize"
+  },
+  "GUI minimize": {
+    "prefix": "gui.minimize",
+    "body": [
+      "gui.minimize(${1:arguments})"
+    ],
+    "description": "GUI API candidate: minimize"
+  },
+  "GUI text": {
+    "prefix": "gui.text",
+    "body": [
+      "gui.text(${1:arguments})"
+    ],
+    "description": "GUI API candidate: text"
+  },
+  "GUI set_text": {
+    "prefix": "gui.set_text",
+    "body": [
+      "gui.set_text(${1:arguments})"
+    ],
+    "description": "GUI API candidate: set_text"
+  },
+  "GUI get_text": {
+    "prefix": "gui.get_text",
+    "body": [
+      "gui.get_text(${1:arguments})"
+    ],
+    "description": "GUI API candidate: get_text"
+  },
+  "GUI input": {
+    "prefix": "gui.input",
+    "body": [
+      "gui.input(${1:arguments})"
+    ],
+    "description": "GUI API candidate: input"
+  },
+  "GUI entry": {
+    "prefix": "gui.entry",
+    "body": [
+      "gui.entry(${1:arguments})"
+    ],
+    "description": "GUI API candidate: entry"
+  },
+  "GUI textbox": {
+    "prefix": "gui.textbox",
+    "body": [
+      "gui.textbox(${1:arguments})"
+    ],
+    "description": "GUI API candidate: textbox"
+  },
+  "GUI textarea": {
+    "prefix": "gui.textarea",
+    "body": [
+      "gui.textarea(${1:arguments})"
+    ],
+    "description": "GUI API candidate: textarea"
+  },
+  "GUI checkbox": {
+    "prefix": "gui.checkbox",
+    "body": [
+      "gui.checkbox(${1:arguments})"
+    ],
+    "description": "GUI API candidate: checkbox"
+  },
+  "GUI radio": {
+    "prefix": "gui.radio",
+    "body": [
+      "gui.radio(${1:arguments})"
+    ],
+    "description": "GUI API candidate: radio"
+  },
+  "GUI switch": {
+    "prefix": "gui.switch",
+    "body": [
+      "gui.switch(${1:arguments})"
+    ],
+    "description": "GUI API candidate: switch"
+  },
+  "GUI slider": {
+    "prefix": "gui.slider",
+    "body": [
+      "gui.slider(${1:arguments})"
+    ],
+    "description": "GUI API candidate: slider"
+  },
+  "GUI progress": {
+    "prefix": "gui.progress",
+    "body": [
+      "gui.progress(${1:arguments})"
+    ],
+    "description": "GUI API candidate: progress"
+  },
+  "GUI progressbar": {
+    "prefix": "gui.progressbar",
+    "body": [
+      "gui.progressbar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: progressbar"
+  },
+  "GUI combobox": {
+    "prefix": "gui.combobox",
+    "body": [
+      "gui.combobox(${1:arguments})"
+    ],
+    "description": "GUI API candidate: combobox"
+  },
+  "GUI dropdown": {
+    "prefix": "gui.dropdown",
+    "body": [
+      "gui.dropdown(${1:arguments})"
+    ],
+    "description": "GUI API candidate: dropdown"
+  },
+  "GUI select": {
+    "prefix": "gui.select",
+    "body": [
+      "gui.select(${1:arguments})"
+    ],
+    "description": "GUI API candidate: select"
+  },
+  "GUI listbox": {
+    "prefix": "gui.listbox",
+    "body": [
+      "gui.listbox(${1:arguments})"
+    ],
+    "description": "GUI API candidate: listbox"
+  },
+  "GUI listview": {
+    "prefix": "gui.listview",
+    "body": [
+      "gui.listview(${1:arguments})"
+    ],
+    "description": "GUI API candidate: listview"
+  },
+  "GUI treeview": {
+    "prefix": "gui.treeview",
+    "body": [
+      "gui.treeview(${1:arguments})"
+    ],
+    "description": "GUI API candidate: treeview"
+  },
+  "GUI table": {
+    "prefix": "gui.table",
+    "body": [
+      "gui.table(${1:arguments})"
+    ],
+    "description": "GUI API candidate: table"
+  },
+  "GUI image": {
+    "prefix": "gui.image",
+    "body": [
+      "gui.image(${1:arguments})"
+    ],
+    "description": "GUI API candidate: image"
+  },
+  "GUI icon": {
+    "prefix": "gui.icon",
+    "body": [
+      "gui.icon(${1:arguments})"
+    ],
+    "description": "GUI API candidate: icon"
+  },
+  "GUI canvas": {
+    "prefix": "gui.canvas",
+    "body": [
+      "gui.canvas(${1:arguments})"
+    ],
+    "description": "GUI API candidate: canvas"
+  },
+  "GUI frame": {
+    "prefix": "gui.frame",
+    "body": [
+      "gui.frame(${1:arguments})"
+    ],
+    "description": "GUI API candidate: frame"
+  },
+  "GUI box": {
+    "prefix": "gui.box",
+    "body": [
+      "gui.box(${1:arguments})"
+    ],
+    "description": "GUI API candidate: box"
+  },
+  "GUI row": {
+    "prefix": "gui.row",
+    "body": [
+      "gui.row(${1:arguments})"
+    ],
+    "description": "GUI API candidate: row"
+  },
+  "GUI column": {
+    "prefix": "gui.column",
+    "body": [
+      "gui.column(${1:arguments})"
+    ],
+    "description": "GUI API candidate: column"
+  },
+  "GUI grid": {
+    "prefix": "gui.grid",
+    "body": [
+      "gui.grid(${1:arguments})"
+    ],
+    "description": "GUI API candidate: grid"
+  },
+  "GUI stack": {
+    "prefix": "gui.stack",
+    "body": [
+      "gui.stack(${1:arguments})"
+    ],
+    "description": "GUI API candidate: stack"
+  },
+  "GUI scroll": {
+    "prefix": "gui.scroll",
+    "body": [
+      "gui.scroll(${1:arguments})"
+    ],
+    "description": "GUI API candidate: scroll"
+  },
+  "GUI scrollbar": {
+    "prefix": "gui.scrollbar",
+    "body": [
+      "gui.scrollbar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: scrollbar"
+  },
+  "GUI separator": {
+    "prefix": "gui.separator",
+    "body": [
+      "gui.separator(${1:arguments})"
+    ],
+    "description": "GUI API candidate: separator"
+  },
+  "GUI spacer": {
+    "prefix": "gui.spacer",
+    "body": [
+      "gui.spacer(${1:arguments})"
+    ],
+    "description": "GUI API candidate: spacer"
+  },
+  "GUI menu": {
+    "prefix": "gui.menu",
+    "body": [
+      "gui.menu(${1:arguments})"
+    ],
+    "description": "GUI API candidate: menu"
+  },
+  "GUI menubar": {
+    "prefix": "gui.menubar",
+    "body": [
+      "gui.menubar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: menubar"
+  },
+  "GUI menuitem": {
+    "prefix": "gui.menuitem",
+    "body": [
+      "gui.menuitem(${1:arguments})"
+    ],
+    "description": "GUI API candidate: menuitem"
+  },
+  "GUI toolbar": {
+    "prefix": "gui.toolbar",
+    "body": [
+      "gui.toolbar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: toolbar"
+  },
+  "GUI statusbar": {
+    "prefix": "gui.statusbar",
+    "body": [
+      "gui.statusbar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: statusbar"
+  },
+  "GUI tabs": {
+    "prefix": "gui.tabs",
+    "body": [
+      "gui.tabs(${1:arguments})"
+    ],
+    "description": "GUI API candidate: tabs"
+  },
+  "GUI tab": {
+    "prefix": "gui.tab",
+    "body": [
+      "gui.tab(${1:arguments})"
+    ],
+    "description": "GUI API candidate: tab"
+  },
+  "GUI notebook": {
+    "prefix": "gui.notebook",
+    "body": [
+      "gui.notebook(${1:arguments})"
+    ],
+    "description": "GUI API candidate: notebook"
+  },
+  "GUI dialog": {
+    "prefix": "gui.dialog",
+    "body": [
+      "gui.dialog(${1:arguments})"
+    ],
+    "description": "GUI API candidate: dialog"
+  },
+  "GUI alert": {
+    "prefix": "gui.alert",
+    "body": [
+      "gui.alert(${1:arguments})"
+    ],
+    "description": "GUI API candidate: alert"
+  },
+  "GUI confirm": {
+    "prefix": "gui.confirm",
+    "body": [
+      "gui.confirm(${1:arguments})"
+    ],
+    "description": "GUI API candidate: confirm"
+  },
+  "GUI message": {
+    "prefix": "gui.message",
+    "body": [
+      "gui.message(${1:arguments})"
+    ],
+    "description": "GUI API candidate: message"
+  },
+  "GUI notification": {
+    "prefix": "gui.notification",
+    "body": [
+      "gui.notification(${1:arguments})"
+    ],
+    "description": "GUI API candidate: notification"
+  },
+  "GUI tooltip": {
+    "prefix": "gui.tooltip",
+    "body": [
+      "gui.tooltip(${1:arguments})"
+    ],
+    "description": "GUI API candidate: tooltip"
+  },
+  "GUI filedialog": {
+    "prefix": "gui.filedialog",
+    "body": [
+      "gui.filedialog(${1:arguments})"
+    ],
+    "description": "GUI API candidate: filedialog"
+  },
+  "GUI colorpicker": {
+    "prefix": "gui.colorpicker",
+    "body": [
+      "gui.colorpicker(${1:arguments})"
+    ],
+    "description": "GUI API candidate: colorpicker"
+  },
+  "GUI fontpicker": {
+    "prefix": "gui.fontpicker",
+    "body": [
+      "gui.fontpicker(${1:arguments})"
+    ],
+    "description": "GUI API candidate: fontpicker"
+  },
+  "GUI calendar": {
+    "prefix": "gui.calendar",
+    "body": [
+      "gui.calendar(${1:arguments})"
+    ],
+    "description": "GUI API candidate: calendar"
+  },
+  "GUI date": {
+    "prefix": "gui.date",
+    "body": [
+      "gui.date(${1:arguments})"
+    ],
+    "description": "GUI API candidate: date"
+  },
+  "GUI time": {
+    "prefix": "gui.time",
+    "body": [
+      "gui.time(${1:arguments})"
+    ],
+    "description": "GUI API candidate: time"
+  },
+  "GUI timer": {
+    "prefix": "gui.timer",
+    "body": [
+      "gui.timer(${1:arguments})"
+    ],
+    "description": "GUI API candidate: timer"
+  },
+  "GUI after": {
+    "prefix": "gui.after",
+    "body": [
+      "gui.after(${1:arguments})"
+    ],
+    "description": "GUI API candidate: after"
+  },
+  "GUI on_click": {
+    "prefix": "gui.on_click",
+    "body": [
+      "gui.on_click(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_click"
+  },
+  "GUI on_change": {
+    "prefix": "gui.on_change",
+    "body": [
+      "gui.on_change(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_change"
+  },
+  "GUI on_key": {
+    "prefix": "gui.on_key",
+    "body": [
+      "gui.on_key(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_key"
+  },
+  "GUI on_close": {
+    "prefix": "gui.on_close",
+    "body": [
+      "gui.on_close(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_close"
+  },
+  "GUI on_focus": {
+    "prefix": "gui.on_focus",
+    "body": [
+      "gui.on_focus(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_focus"
+  },
+  "GUI on_blur": {
+    "prefix": "gui.on_blur",
+    "body": [
+      "gui.on_blur(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_blur"
+  },
+  "GUI on_hover": {
+    "prefix": "gui.on_hover",
+    "body": [
+      "gui.on_hover(${1:arguments})"
+    ],
+    "description": "GUI API candidate: on_hover"
+  },
+  "GUI bind": {
+    "prefix": "gui.bind",
+    "body": [
+      "gui.bind(${1:arguments})"
+    ],
+    "description": "GUI API candidate: bind"
+  },
+  "GUI connect": {
+    "prefix": "gui.connect",
+    "body": [
+      "gui.connect(${1:arguments})"
+    ],
+    "description": "GUI API candidate: connect"
+  },
+  "GUI disconnect": {
+    "prefix": "gui.disconnect",
+    "body": [
+      "gui.disconnect(${1:arguments})"
+    ],
+    "description": "GUI API candidate: disconnect"
+  },
+  "GUI set": {
+    "prefix": "gui.set",
+    "body": [
+      "gui.set(${1:arguments})"
+    ],
+    "description": "GUI API candidate: set"
+  },
+  "GUI get": {
+    "prefix": "gui.get",
+    "body": [
+      "gui.get(${1:arguments})"
+    ],
+    "description": "GUI API candidate: get"
+  },
+  "GUI configure": {
+    "prefix": "gui.configure",
+    "body": [
+      "gui.configure(${1:arguments})"
+    ],
+    "description": "GUI API candidate: configure"
+  },
+  "GUI config": {
+    "prefix": "gui.config",
+    "body": [
+      "gui.config(${1:arguments})"
+    ],
+    "description": "GUI API candidate: config"
+  },
+  "GUI style": {
+    "prefix": "gui.style",
+    "body": [
+      "gui.style(${1:arguments})"
+    ],
+    "description": "GUI API candidate: style"
+  },
+  "GUI css": {
+    "prefix": "gui.css",
+    "body": [
+      "gui.css(${1:arguments})"
+    ],
+    "description": "GUI API candidate: css"
+  },
+  "GUI class_name": {
+    "prefix": "gui.class_name",
+    "body": [
+      "gui.class_name(${1:arguments})"
+    ],
+    "description": "GUI API candidate: class_name"
+  },
+  "GUI add_class": {
+    "prefix": "gui.add_class",
+    "body": [
+      "gui.add_class(${1:arguments})"
+    ],
+    "description": "GUI API candidate: add_class"
+  },
+  "GUI remove_class": {
+    "prefix": "gui.remove_class",
+    "body": [
+      "gui.remove_class(${1:arguments})"
+    ],
+    "description": "GUI API candidate: remove_class"
+  },
+  "GUI margin": {
+    "prefix": "gui.margin",
+    "body": [
+      "gui.margin(${1:arguments})"
+    ],
+    "description": "GUI API candidate: margin"
+  },
+  "GUI padding": {
+    "prefix": "gui.padding",
+    "body": [
+      "gui.padding(${1:arguments})"
+    ],
+    "description": "GUI API candidate: padding"
+  },
+  "GUI spacing": {
+    "prefix": "gui.spacing",
+    "body": [
+      "gui.spacing(${1:arguments})"
+    ],
+    "description": "GUI API candidate: spacing"
+  },
+  "GUI border": {
+    "prefix": "gui.border",
+    "body": [
+      "gui.border(${1:arguments})"
+    ],
+    "description": "GUI API candidate: border"
+  },
+  "GUI radius": {
+    "prefix": "gui.radius",
+    "body": [
+      "gui.radius(${1:arguments})"
+    ],
+    "description": "GUI API candidate: radius"
+  },
+  "GUI background": {
+    "prefix": "gui.background",
+    "body": [
+      "gui.background(${1:arguments})"
+    ],
+    "description": "GUI API candidate: background"
+  },
+  "GUI foreground": {
+    "prefix": "gui.foreground",
+    "body": [
+      "gui.foreground(${1:arguments})"
+    ],
+    "description": "GUI API candidate: foreground"
+  },
+  "GUI color": {
+    "prefix": "gui.color",
+    "body": [
+      "gui.color(${1:arguments})"
+    ],
+    "description": "GUI API candidate: color"
+  },
+  "GUI font": {
+    "prefix": "gui.font",
+    "body": [
+      "gui.font(${1:arguments})"
+    ],
+    "description": "GUI API candidate: font"
+  },
+  "GUI font_size": {
+    "prefix": "gui.font_size",
+    "body": [
+      "gui.font_size(${1:arguments})"
+    ],
+    "description": "GUI API candidate: font_size"
+  },
+  "GUI opacity": {
+    "prefix": "gui.opacity",
+    "body": [
+      "gui.opacity(${1:arguments})"
+    ],
+    "description": "GUI API candidate: opacity"
+  },
+  "GUI visible": {
+    "prefix": "gui.visible",
+    "body": [
+      "gui.visible(${1:arguments})"
+    ],
+    "description": "GUI API candidate: visible"
+  },
+  "GUI enabled": {
+    "prefix": "gui.enabled",
+    "body": [
+      "gui.enabled(${1:arguments})"
+    ],
+    "description": "GUI API candidate: enabled"
+  },
+  "GUI disabled": {
+    "prefix": "gui.disabled",
+    "body": [
+      "gui.disabled(${1:arguments})"
+    ],
+    "description": "GUI API candidate: disabled"
+  },
+  "GUI focus": {
+    "prefix": "gui.focus",
+    "body": [
+      "gui.focus(${1:arguments})"
+    ],
+    "description": "GUI API candidate: focus"
+  },
+  "GUI grab_focus": {
+    "prefix": "gui.grab_focus",
+    "body": [
+      "gui.grab_focus(${1:arguments})"
+    ],
+    "description": "GUI API candidate: grab_focus"
+  },
+  "GUI destroy": {
+    "prefix": "gui.destroy",
+    "body": [
+      "gui.destroy(${1:arguments})"
+    ],
+    "description": "GUI API candidate: destroy"
+  },
+  "GUI clear": {
+    "prefix": "gui.clear",
+    "body": [
+      "gui.clear(${1:arguments})"
+    ],
+    "description": "GUI API candidate: clear"
+  },
+  "GUI append": {
+    "prefix": "gui.append",
+    "body": [
+      "gui.append(${1:arguments})"
+    ],
+    "description": "GUI API candidate: append"
+  },
+  "GUI insert": {
+    "prefix": "gui.insert",
+    "body": [
+      "gui.insert(${1:arguments})"
+    ],
+    "description": "GUI API candidate: insert"
+  },
+  "GUI remove": {
+    "prefix": "gui.remove",
+    "body": [
+      "gui.remove(${1:arguments})"
+    ],
+    "description": "GUI API candidate: remove"
+  },
+  "GUI delete": {
+    "prefix": "gui.delete",
+    "body": [
+      "gui.delete(${1:arguments})"
+    ],
+    "description": "GUI API candidate: delete"
+  },
+  "GUI update": {
+    "prefix": "gui.update",
+    "body": [
+      "gui.update(${1:arguments})"
+    ],
+    "description": "GUI API candidate: update"
+  },
+  "GUI refresh": {
+    "prefix": "gui.refresh",
+    "body": [
+      "gui.refresh(${1:arguments})"
+    ],
+    "description": "GUI API candidate: refresh"
+  },
+  "GUI pack": {
+    "prefix": "gui.pack",
+    "body": [
+      "gui.pack(${1:arguments})"
+    ],
+    "description": "GUI API candidate: pack"
+  },
+  "GUI place": {
+    "prefix": "gui.place",
+    "body": [
+      "gui.place(${1:arguments})"
+    ],
+    "description": "GUI API candidate: place"
+  },
+  "GUI attach": {
+    "prefix": "gui.attach",
+    "body": [
+      "gui.attach(${1:arguments})"
+    ],
+    "description": "GUI API candidate: attach"
+  },
+  "GUI expand": {
+    "prefix": "gui.expand",
+    "body": [
+      "gui.expand(${1:arguments})"
+    ],
+    "description": "GUI API candidate: expand"
+  },
+  "GUI fill": {
+    "prefix": "gui.fill",
+    "body": [
+      "gui.fill(${1:arguments})"
+    ],
+    "description": "GUI API candidate: fill"
+  },
+  "GUI align": {
+    "prefix": "gui.align",
+    "body": [
+      "gui.align(${1:arguments})"
+    ],
+    "description": "GUI API candidate: align"
+  },
+  "GUI justify": {
+    "prefix": "gui.justify",
+    "body": [
+      "gui.justify(${1:arguments})"
+    ],
+    "description": "GUI API candidate: justify"
+  },
+  "GUI orientation": {
+    "prefix": "gui.orientation",
+    "body": [
+      "gui.orientation(${1:arguments})"
+    ],
+    "description": "GUI API candidate: orientation"
+  },
+  "GUI homogeneous": {
+    "prefix": "gui.homogeneous",
+    "body": [
+      "gui.homogeneous(${1:arguments})"
+    ],
+    "description": "GUI API candidate: homogeneous"
+  },
+  "GUI tooltip_text": {
+    "prefix": "gui.tooltip_text",
+    "body": [
+      "gui.tooltip_text(${1:arguments})"
+    ],
+    "description": "GUI API candidate: tooltip_text"
+  },
+  "GUI placeholder": {
+    "prefix": "gui.placeholder",
+    "body": [
+      "gui.placeholder(${1:arguments})"
+    ],
+    "description": "GUI API candidate: placeholder"
+  },
+  "GUI value": {
+    "prefix": "gui.value",
+    "body": [
+      "gui.value(${1:arguments})"
+    ],
+    "description": "GUI API candidate: value"
+  },
+  "GUI minimum": {
+    "prefix": "gui.minimum",
+    "body": [
+      "gui.minimum(${1:arguments})"
+    ],
+    "description": "GUI API candidate: minimum"
+  },
+  "GUI maximum": {
+    "prefix": "gui.maximum",
+    "body": [
+      "gui.maximum(${1:arguments})"
+    ],
+    "description": "GUI API candidate: maximum"
+  },
+  "GUI step": {
+    "prefix": "gui.step",
+    "body": [
+      "gui.step(${1:arguments})"
+    ],
+    "description": "GUI API candidate: step"
+  },
+  "GUI selected": {
+    "prefix": "gui.selected",
+    "body": [
+      "gui.selected(${1:arguments})"
+    ],
+    "description": "GUI API candidate: selected"
+  },
+  "GUI selection": {
+    "prefix": "gui.selection",
+    "body": [
+      "gui.selection(${1:arguments})"
+    ],
+    "description": "GUI API candidate: selection"
+  },
+  "GUI items": {
+    "prefix": "gui.items",
+    "body": [
+      "gui.items(${1:arguments})"
+    ],
+    "description": "GUI API candidate: items"
+  },
+  "GUI children": {
+    "prefix": "gui.children",
+    "body": [
+      "gui.children(${1:arguments})"
+    ],
+    "description": "GUI API candidate: children"
+  },
+  "GUI parent": {
+    "prefix": "gui.parent",
+    "body": [
+      "gui.parent(${1:arguments})"
+    ],
+    "description": "GUI API candidate: parent"
+  },
+  "GUI add": {
+    "prefix": "gui.add",
+    "body": [
+      "gui.add(${1:arguments})"
+    ],
+    "description": "GUI API candidate: add"
+  },
+  "GUI remove_child": {
+    "prefix": "gui.remove_child",
+    "body": [
+      "gui.remove_child(${1:arguments})"
+    ],
+    "description": "GUI API candidate: remove_child"
+  },
+  "Extension namespace": {
+    "prefix": "namespace",
+    "body": [
+      "namespace(${1:arguments})"
+    ],
+    "description": "Extension API: namespace"
+  },
+  "Extension create_class": {
+    "prefix": "create_class",
+    "body": [
+      "create_class(${1:arguments})"
+    ],
+    "description": "Extension API: create_class"
+  },
+  "Extension load_library": {
+    "prefix": "load_library",
+    "body": [
+      "load_library(${1:arguments})"
+    ],
+    "description": "Extension API: load_library"
+  }
+}

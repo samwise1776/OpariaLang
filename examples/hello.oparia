@@ -1,0 +1,10 @@
+string name = "OpariaLang"
+print f"Hello from {name}!"
+
+int value = 10
+
+func double(x) {
+    return x * 2
+}
+
+print double(value)

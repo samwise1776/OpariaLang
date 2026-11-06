@@ -1,0 +1,136 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "OpariaLang",
+  "scopeName": "source.oparia",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#extern"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.oparia",
+          "match": "^\\s*#.*$"
+        },
+        {
+          "name": "comment.line.double-slash.oparia",
+          "match": "^\\s*//.*$"
+        }
+      ]
+    },
+    "extern": {
+      "patterns": [
+        {
+          "match": "\\bextern\\s+([\"\\'])(Python|C\\+\\+|C|cpp)\\1",
+          "captures": {
+            "0": {
+              "name": "keyword.control.import.oparia"
+            },
+            "2": {
+              "name": "support.constant.language.oparia"
+            }
+          }
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.oparia",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.oparia",
+              "match": "\\\\."
+            },
+            {
+              "name": "variable.other.interpolation.oparia",
+              "match": "\\{[^{}]+\\}"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.oparia",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.oparia",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.oparia",
+      "match": "\\b\\d+(?:\\.\\d+)?\\b"
+    },
+    "types": {
+      "name": "storage.type.oparia",
+      "match": "\\b(?:int|float|string|text|bool|any|null|list)\\b"
+    },
+    "keywords": {
+      "name": "keyword.control.oparia",
+      "match": "\\b(?:if|elsif|else|while|repeat|for|in|break|continue|func|return|extern|and|or|not|is)\\b"
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.oparia",
+          "match": "(?<=\\bfunc\\s)[A-Za-z_]\\w*"
+        },
+        {
+          "name": "support.function.file.oparia",
+          "match": "\\bFile\\.(?:write|append|read|exists|delete|mkdir|size)\\b"
+        },
+        {
+          "name": "support.function.gui.oparia",
+          "match": "\\bgui\\.[A-Za-z_]\\w*\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "name": "support.function.builtin.oparia",
+      "match": "\\b(?:print|say|input|len|str|int|float|bool|range|abs|min|max|sum|round|upper|lower|strip|replace|split|join|contains|keys|values|items|dict|list|wait|sleep|system|debug)\\b"
+    },
+    "constants": {
+      "name": "constant.language.oparia",
+      "match": "\\b(?:true|false|null)\\b"
+    },
+    "operators": {
+      "name": "keyword.operator.oparia",
+      "match": "==|!=|<=|>=|\\*\\*|//|[+\\-*/%=<>]"
+    }
+  }
+}

@@ -1,0 +1,2 @@
+# Add Python package requirements here.
+# GTK4 PyGObject may require system-level packages.

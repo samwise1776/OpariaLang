@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.env.*
+!.env.example
+node_modules/
+*.vsix
+.DS_Store
+.vscode-test/
+dist/
+build/
+*.egg-info/
