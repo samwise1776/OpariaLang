@@ -1293,3 +1293,27 @@ The current interpreter has several limitations:
 ---
 
 **End of Language Syntax Reference**
+## Native Compilation
+
+Compile an OpariaLang source file into a native executable
+for the current operating system.
+
+```bash
+python main.py compile program.oparia
+```
+
+Specify the output name:
+
+```bash
+python main.py compile program.oparia -o myapp
+```
+
+Linux produces an ELF executable, Windows produces a PE executable,
+and macOS produces a Mach-O executable.
+
+Native compilation uses Nuitka and bundles the OpariaLang
+interpreter with the program. It does not translate OpariaLang
+directly into machine instructions.
+
+The executable runs without a separately installed Python interpreter.
+External C/C++ blocks still require compilers at runtime.

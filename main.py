@@ -1782,5 +1782,25 @@ def main():
         )
 
 
+
+# OPARIALANG_NATIVE_COMPILER
+def native_compile_cli():
+    if len(sys.argv) >= 3 and sys.argv[1] == "compile":
+        from compiler import compile_oparia
+        output = None
+
+        if "-o" in sys.argv:
+            index = sys.argv.index("-o")
+            if index + 1 >= len(sys.argv):
+                raise SystemExit("Missing output filename")
+            output = sys.argv[index + 1]
+
+        compile_oparia(sys.argv[2], output)
+        return True
+
+    return False
+
+
 if __name__ == "__main__":
-    main()
+    if not native_compile_cli():
+        main()
