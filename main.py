@@ -991,6 +991,8 @@ def logical_lines(source):
     pending = ""
     depth = 0
     in_extern = False
+    extern_depth = 0
+    extern_language = ''
 
     declaration_pattern = re.compile(
         r"^(?:list<[^>]+>|string|text|int|float|bool|any)"
@@ -1006,8 +1008,13 @@ def logical_lines(source):
         if in_extern:
             lines.append(raw)
 
-            if line == "}":
-                in_extern = False
+            if extern_language.lower() == "python":
+                if line == "}":
+                    in_extern = False
+            else:
+                extern_depth += brace_balance(raw)
+                if extern_depth == 0:
+                    in_extern = False
 
             continue
 
@@ -1024,6 +1031,12 @@ def logical_lines(source):
         ):
             lines.append(line)
             in_extern = True
+            extern_depth = 1
+            extern_language = re.search(
+                r'extern\\s+["\\\']([^"\\\']+)["\\\']',
+                line,
+                re.I
+            ).group(1)
             continue
 
         if pending:
@@ -1295,8 +1308,9 @@ def execute(lines):
         # EXTERN PYTHON / C / C++
         # ====================================
 
+
         extern_match = re.fullmatch(
-            r'extern\s+["\'](Python|C|C\+\+|cpp)["\']\s*\{',
+            r'extern\\s+["\\\'](Python|C|C\\+\\+|cpp)["\\\']\\s*\\{',
             line,
             re.I
         )
@@ -1304,25 +1318,35 @@ def execute(lines):
         if extern_match:
             language = extern_match.group(1)
             body = []
+            depth = 1
             i += 1
 
             while i < len(lines):
                 raw = lines[i]
+                stripped = raw.strip()
 
-                if raw.strip() == "}":
+                if language.lower() == "python":
+                    if stripped == "}":
+                        depth -= 1
+                    else:
+                        body.append(raw)
+                else:
+                    depth += brace_balance(raw)
+
+                    if depth > 0:
+                        body.append(raw)
+
+                if depth == 0:
                     break
 
-                body.append(raw)
                 i += 1
 
-            if i >= len(lines):
+            if depth != 0:
                 raise LangError(
                     f"Unclosed extern {language} block"
                 )
 
-            source = "\n".join(body)
-            run_extern(language, source)
-
+            run_extern(language, "\\n".join(body))
             i += 1
             continue
 

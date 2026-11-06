@@ -16,8 +16,9 @@ def compile_oparia(source, output=None):
     if not source.is_file():
         raise SystemExit(f"Source not found: {source}")
 
-    if source.suffix not in (".oparia", ".opa"):
-        raise SystemExit("Expected a .oparia or .opa file")
+    # OpariaLang also accepts extensionless source files.
+    if not source.is_file():
+        raise SystemExit(f"Source not found: {source}")
 
     os_name = platform.system()
 
